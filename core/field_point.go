@@ -121,10 +121,10 @@ func (f *PointField) ValidateValue(ctx context.Context, app App, record *Record)
 	}
 
 	lat := val.Lat()
-	if lat > 90 {
+	if lat > 85.06 {
 		return fmt.Errorf("latitude cannot be >90, got %f", val.Lat())
 	}
-	if lat < -90 {
+	if lat < -85.06 {
 		return fmt.Errorf("latitude cannot be <-90, got %f", val.Lat())
 	}
 
