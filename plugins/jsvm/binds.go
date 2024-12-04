@@ -499,6 +499,10 @@ func baseBinds(vm *goja.Runtime) {
 		instance := &core.FileField{}
 		return structConstructorUnmarshal(vm, call, instance)
 	})
+	vm.Set("PointField", func(call goja.ConstructorCall) *goja.Object {
+		instance := &core.PointField{}
+		return structConstructorUnmarshal(vm, call, instance)
+	})
 	// ---
 
 	vm.Set("MailerMessage", func(call goja.ConstructorCall) *goja.Object {

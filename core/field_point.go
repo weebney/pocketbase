@@ -17,7 +17,9 @@ func init() {
 
 const FieldTypePoint = "point"
 
-var _ Field = (*PointField)(nil)
+var (
+	_ Field = (*PointField)(nil)
+)
 
 // PointField defines "point" type field to store a single [types.Point] value.
 //
@@ -49,7 +51,7 @@ type PointField struct {
 
 // Type implements [Field.Type] interface method.
 func (f *PointField) Type() string {
-	return FieldTypeDate
+	return FieldTypePoint
 }
 
 // GetId implements [Field.GetId] interface method.
@@ -99,10 +101,7 @@ func (f *PointField) ColumnType(app App) string {
 
 // PrepareValue implements [Field.PrepareValue] interface method.
 func (f *PointField) PrepareValue(record *Record, raw any) (any, error) {
-	// ignore scan errors since the format may change between versions
-	// and to allow running db adjusting migrations
-	val, _ := types.ParseDateTime(raw)
-	return val, nil
+	return types.ParsePoint(raw)
 }
 
 // ValidateValue implements [Field.ValidateValue] interface method.
