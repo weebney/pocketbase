@@ -11,6 +11,7 @@
     import SchemaFieldJson from "@/components/collections/schema/SchemaFieldJson.svelte";
     import SchemaFieldNumber from "@/components/collections/schema/SchemaFieldNumber.svelte";
     import SchemaFieldPassword from "@/components/collections/schema/SchemaFieldPassword.svelte";
+    import SchemaFieldPoint from "@/components/collections/schema/SchemaFieldPoint.svelte";
     import SchemaFieldRelation from "@/components/collections/schema/SchemaFieldRelation.svelte";
     import SchemaFieldSelect from "@/components/collections/schema/SchemaFieldSelect.svelte";
     import SchemaFieldText from "@/components/collections/schema/SchemaFieldText.svelte";
@@ -37,6 +38,7 @@
         relation: SchemaFieldRelation,
         password: SchemaFieldPassword,
         autodate: SchemaFieldAutodate,
+        point: SchemaFieldPoint,
     };
 
     $: if (!collection.id && oldCollectionType != collection.type) {

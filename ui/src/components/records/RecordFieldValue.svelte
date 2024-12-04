@@ -43,6 +43,8 @@
     <span class="label" class:label-success={!!rawValue}>{rawValue ? "True" : "False"}</span>
 {:else if field.type === "number"}
     <span class="txt">{rawValue}</span>
+{:else if field.type === "point"}
+    <span class="txt">{rawValue}</span>
 {:else if field.type === "url"}
     <a
         class="txt-ellipsis"

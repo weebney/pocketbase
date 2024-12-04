@@ -19,6 +19,7 @@
     import JsonField from "@/components/records/fields/JsonField.svelte";
     import NumberField from "@/components/records/fields/NumberField.svelte";
     import PasswordField from "@/components/records/fields/PasswordField.svelte";
+    import PointField from "@/components/records/fields/PointField.svelte";
     import RelationField from "@/components/records/fields/RelationField.svelte";
     import SelectField from "@/components/records/fields/SelectField.svelte";
     import TextField from "@/components/records/fields/TextField.svelte";
@@ -729,6 +730,8 @@
                     <RelationField {field} {original} {record} bind:value={record[field.name]} />
                 {:else if field.type === "password"}
                     <PasswordField {field} {original} {record} bind:value={record[field.name]} />
+                {:else if field.type === "point"}
+                    <PointField {field} {original} {record} bind:value={record[field.name]} />
                 {/if}
             {/each}
         </form>

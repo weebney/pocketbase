@@ -69,6 +69,11 @@
             value: "json",
             icon: CommonHelper.getFieldTypeIcon("json"),
         },
+        {
+            label: "Point",
+            value: "point",
+            icon: CommonHelper.getFieldTypeIcon("point"),
+        },
         // {
         //     label: "Password",
         //     value: "password",
